@@ -22,7 +22,7 @@ import * as React from 'react';
   'bottom',
   'left bottom',
   'left',
-  ' left top',
+  'left top',
   undefined
 ];
  declare type GravityValue = typeof VALID_GRAVITY_VALUES[number];
