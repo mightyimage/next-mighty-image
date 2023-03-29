@@ -4,7 +4,6 @@
 A Next.js component for [Mighty Image](https://www.mightyimage.io)
 
 ## Features
----
 - Lazy loading
 - Supports all mighty image tranformations
 - Add labels to images
@@ -12,8 +11,6 @@ A Next.js component for [Mighty Image](https://www.mightyimage.io)
 - Apply custom CSS classes
 
 ## How to use
----
-
 1. Install the package via npm `npm i next-mighty-image@latest`
 
 2. Add an environment variable: `MIGHTY_IMAGE_ID=**YOUR_ACCOUNT_ID**`. This ID can be found in the Mighty Image dashboard for your account
@@ -34,7 +31,6 @@ A Next.js component for [Mighty Image](https://www.mightyimage.io)
 4. Try it out by running your project with `next dev`
 
 ## Properties
----
 Following properties are supported. 
 `src`, `alt`, `width` and `height` are mandatory
 
@@ -76,8 +72,6 @@ Following properties are supported.
   ````
 
 # Sizing breakpoints
----
-
 | Size | Breakpoint |
 | ----------- | ----------- |
 | sm | viewport width <= 768px | 
