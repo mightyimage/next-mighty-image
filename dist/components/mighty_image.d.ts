@@ -67,5 +67,6 @@ type IProps = {
     onClick?: any;
     loading?: LoadingValue;
 };
-export declare const MightyImage: (props: IProps) => JSX.Element;
+export declare function MightyImage(props: IProps): JSX.Element;
 export {};
+//# sourceMappingURL=mighty_image.d.ts.map

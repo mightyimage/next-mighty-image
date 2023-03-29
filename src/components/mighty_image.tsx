@@ -1,3 +1,4 @@
+import * as React from 'react';
 
 
  declare const VALID_LOADING_VALUES: readonly ['lazy', 'eager', undefined];
@@ -74,7 +75,7 @@
   }
 }
 
-export const MightyImage = function (props: IProps) {
+export function MightyImage(props: IProps) {
   const mightyAccountId = process.env.NEXT_PUBLIC_MIGHTY_IMAGE_ID;
 
   const url = new URL(props.src);
@@ -139,6 +140,7 @@ export const MightyImage = function (props: IProps) {
   pushParameter(url.searchParams, 'lc', props.label?.color);
 
   return (
+    // eslint-disable-next-line @next/next/no-img-element
     <img
       src={url.href}
       alt={props.alt}

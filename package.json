@@ -1,6 +1,6 @@
 {
   "name": "next-mighty-image",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A next js component for Mighty Image",
   "private": false,
   "type": "module",
@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build-mc": "microbundle",          
+    "build-mc": "microbundle --jsx React.createElement",          
     "dev-mc": "microbundle watch"  
   },
   "dependencies": {
@@ -49,11 +49,11 @@
     "microbundle": "^0.15.1"
   },
   "files": [
-    "./dist"
+    "dist"
 ],
-  "main": "dist/mightyimage.cjs",           
-  "module": "dist/mightyimage.module.js",  
-  "unpkg": "dist/mightyimage.umd.js",
-  "types": "dist/mightyimage.d.ts",
+  "main": "dist/index.cjs",           
+  "module": "dist/index.module.js",  
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
   "source": "src/index.ts"
 }
