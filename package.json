@@ -1,0 +1,59 @@
+{
+  "name": "next-mighty-image",
+  "version": "0.0.2",
+  "description": "A next js component for Mighty Image",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "build-mc": "microbundle",          
+    "dev-mc": "microbundle watch"  
+  },
+  "dependencies": {
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.31",
+    "@types/react-dom": "18.0.11",
+    "eslint": "8.37.0",
+    "eslint-config-next": "13.2.4",
+    "next": "13.2.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "5.0.2"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mightyimage/next-mighty-image.git"
+  },
+  "keywords": [
+    "Next.js",
+    "next",
+    "mighty",
+    "image",
+    "javascript",
+    "typescript",
+    "nextjs"
+  ],
+  "author": "Mighty Image",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mightyimage/next-mighty-image/issues"
+  },
+  "homepage": "https://github.com/mightyimage/next-mighty-image#readme",
+  "devDependencies": {
+    "microbundle": "^0.15.1"
+  },
+  "files": [
+    "./dist"
+],
+  "main": "dist/mightyimage.cjs",           
+  "module": "dist/mightyimage.module.js",  
+  "unpkg": "dist/mightyimage.umd.js",
+  "types": "dist/mightyimage.d.ts",
+  "source": "src/index.ts"
+}
