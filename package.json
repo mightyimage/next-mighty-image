@@ -1,6 +1,6 @@
 {
   "name": "next-mighty-image",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A next js component for Mighty Image",
   "private": false,
   "type": "module",
