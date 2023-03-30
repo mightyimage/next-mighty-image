@@ -71,9 +71,56 @@ Following properties are supported.
 }
   ````
 
-# Sizing breakpoints
+## Sizing breakpoints
 | Size | Breakpoint |
 | ----------- | ----------- |
 | sm | viewport width <= 768px | 
 | md |  viewport width <= 1200px |
 | lg | Te viewport width > 1200px |
+
+## Examples
+
+### Lazy loading, breakpoint sizeing and conversion to Webp
+
+````
+  <MightyImage
+                src={/products/red-chair-2022.png}
+                alt={"A product shot of a red chair"}
+                height={500}
+                width={500}
+                loading={'lazy'}
+                tranformations={{
+                  quality: 100,
+                  boxfit: 'contain',
+                  format: 'webp',
+                }}
+                sizes={{
+                  sm: { w: 200, h: 300 },
+                  md: { w: 150, h: 230 },
+                  lg: { w: 300, h: 455 },
+                }}
+              />
+````
+### Lazy loading, breakpoint sizeing and conversion to Webp
+
+````
+  <MightyImage
+                src={/products/red-chair-2022.png}
+                alt={"A product shot of a red chair"}
+                height={500}
+                width={500}
+                sizes={{
+                  sm: { w: 200, h: 300 },
+                  md: { w: 150, h: 230 },
+                  lg: { w: 300, h: 455 },
+                }}
+                label={{
+                  text: '© Mighty Image',
+                  left: 20,
+                  top: 20,
+                  width: 60,
+                  height: 30,
+                  color: 'F2F2F2',
+                }}
+              />
+````

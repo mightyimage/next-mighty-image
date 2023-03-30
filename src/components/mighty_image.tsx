@@ -1,36 +1,35 @@
-import * as React from 'react';
+import * as React from "react";
 
+declare const VALID_LOADING_VALUES: readonly ["lazy", "eager", undefined];
+declare type LoadingValue = typeof VALID_LOADING_VALUES[number];
 
- declare const VALID_LOADING_VALUES: readonly ['lazy', 'eager', undefined];
- declare type LoadingValue = typeof VALID_LOADING_VALUES[number];
-
- declare const VALID_BOXFIT_VALUES: readonly [
-  'cover',
-  'contain',
-  'fill',
-  'inside',
-  'outside',
+declare const VALID_BOXFIT_VALUES: readonly [
+  "cover",
+  "contain",
+  "fill",
+  "inside",
+  "outside",
   undefined
 ];
- declare type BoxFitValue = typeof VALID_BOXFIT_VALUES[number];
+declare type BoxFitValue = typeof VALID_BOXFIT_VALUES[number];
 
- declare const VALID_GRAVITY_VALUES: readonly [
-  'top',
-  'right top',
-  'right',
-  'right bottom',
-  'bottom',
-  'left bottom',
-  'left',
-  'left top',
+declare const VALID_GRAVITY_VALUES: readonly [
+  "top",
+  "right top",
+  "right",
+  "right bottom",
+  "bottom",
+  "left bottom",
+  "left",
+  "left top",
   undefined
 ];
- declare type GravityValue = typeof VALID_GRAVITY_VALUES[number];
+declare type GravityValue = typeof VALID_GRAVITY_VALUES[number];
 
- declare const VALID_FORMAT_VALUES: readonly ['jpeg', 'png', 'webp', undefined];
- declare type FormatValue = typeof VALID_FORMAT_VALUES[number];
+declare const VALID_FORMAT_VALUES: readonly ["jpeg", "png", "webp", undefined];
+declare type FormatValue = typeof VALID_FORMAT_VALUES[number];
 
- type IProps = {
+type IProps = {
   src: string;
   alt: string;
   width: number;
@@ -65,7 +64,7 @@ import * as React from 'react';
   loading?: LoadingValue;
 };
 
- function pushParameter(
+function pushParameter(
   params: URLSearchParams,
   key: string,
   value?: string | number | boolean
@@ -80,64 +79,64 @@ export function MightyImage(props: IProps) {
 
   const url = new URL(props.src);
 
-  url.hostname = 'media.mightyimage.io';
+  url.hostname = "media.mightyimage.io";
   url.pathname = `/image/${mightyAccountId}${url.pathname}`; // TODO check if / are correct?
 
   let screenWidth = 0;
 
-  if (typeof window !== 'undefined') {
+  if (typeof window !== "undefined") {
     screenWidth = window.innerWidth;
   }
 
   // Sizing and cropping
   // If no sizes were set, we use the width and height props directly;
   if (!props.sizes) {
-    pushParameter(url.searchParams, 'w', props.width);
-    pushParameter(url.searchParams, 'h', props.height);
+    pushParameter(url.searchParams, "w", props.width);
+    pushParameter(url.searchParams, "h", props.height);
   }
   // Check if we are 'sm' w <= 768px
   else if (screenWidth <= 768 && props.sizes.sm) {
-    pushParameter(url.searchParams, 'w', props.sizes.sm?.w ?? props.width);
-    pushParameter(url.searchParams, 'h', props.sizes.sm?.h ?? props.height);
+    pushParameter(url.searchParams, "w", props.sizes.sm?.w ?? props.width);
+    pushParameter(url.searchParams, "h", props.sizes.sm?.h ?? props.height);
   }
   // Check if we are 'md' w <= 1200px
   else if (screenWidth <= 1200 && props.sizes.md) {
-    pushParameter(url.searchParams, 'w', props.sizes.md?.w ?? props.width);
-    pushParameter(url.searchParams, 'h', props.sizes.md?.h ?? props.height);
+    pushParameter(url.searchParams, "w", props.sizes.md?.w ?? props.width);
+    pushParameter(url.searchParams, "h", props.sizes.md?.h ?? props.height);
   }
   // Otherwise we are 'lg'
   else if (props.sizes.lg) {
-    pushParameter(url.searchParams, 'w', props.sizes.lg?.w ?? props.width);
-    pushParameter(url.searchParams, 'h', props.sizes.lg?.h ?? props.height);
+    pushParameter(url.searchParams, "w", props.sizes.lg?.w ?? props.width);
+    pushParameter(url.searchParams, "h", props.sizes.lg?.h ?? props.height);
   }
   // default to width and height props;
   else {
-    pushParameter(url.searchParams, 'w', props.width);
-    pushParameter(url.searchParams, 'h', props.height);
+    pushParameter(url.searchParams, "w", props.width);
+    pushParameter(url.searchParams, "h", props.height);
   }
 
-  pushParameter(url.searchParams, 'bf', props.tranformations?.boxfit);
-  pushParameter(url.searchParams, 'g', props.tranformations?.gravity);
-  pushParameter(url.searchParams, 'ct', props.tranformations?.croptop);
-  pushParameter(url.searchParams, 'cl', props.tranformations?.cropleft);
-  pushParameter(url.searchParams, 'sc', props.tranformations?.smartcrop);
+  pushParameter(url.searchParams, "bf", props.tranformations?.boxfit);
+  pushParameter(url.searchParams, "g", props.tranformations?.gravity);
+  pushParameter(url.searchParams, "ct", props.tranformations?.croptop);
+  pushParameter(url.searchParams, "cl", props.tranformations?.cropleft);
+  pushParameter(url.searchParams, "sc", props.tranformations?.smartcrop);
 
   // Format and quality
-  pushParameter(url.searchParams, 'q', props.tranformations?.quality);
-  pushParameter(url.searchParams, 'f', props.tranformations?.format);
-  pushParameter(url.searchParams, 'p', props.tranformations?.progressive);
+  pushParameter(url.searchParams, "q", props.tranformations?.quality);
+  pushParameter(url.searchParams, "f", props.tranformations?.format);
+  pushParameter(url.searchParams, "p", props.tranformations?.progressive);
 
   // Filters
-  pushParameter(url.searchParams, 'gs', props.tranformations?.greyscale);
-  pushParameter(url.searchParams, 'sp', props.tranformations?.sepia);
+  pushParameter(url.searchParams, "gs", props.tranformations?.greyscale);
+  pushParameter(url.searchParams, "sp", props.tranformations?.sepia);
 
   // Labels
-  pushParameter(url.searchParams, 'ltxt', props.label?.text);
-  pushParameter(url.searchParams, 'll', props.label?.left);
-  pushParameter(url.searchParams, 'lt', props.label?.top);
-  pushParameter(url.searchParams, 'lw', props.label?.width);
-  pushParameter(url.searchParams, 'lh', props.label?.height);
-  pushParameter(url.searchParams, 'lc', props.label?.color);
+  pushParameter(url.searchParams, "ltxt", props.label?.text);
+  pushParameter(url.searchParams, "ll", props.label?.left);
+  pushParameter(url.searchParams, "lt", props.label?.top);
+  pushParameter(url.searchParams, "lw", props.label?.width);
+  pushParameter(url.searchParams, "lh", props.label?.height);
+  pushParameter(url.searchParams, "lc", props.label?.color);
 
   return (
     // eslint-disable-next-line @next/next/no-img-element
@@ -152,4 +151,3 @@ export function MightyImage(props: IProps) {
     />
   );
 }
-
