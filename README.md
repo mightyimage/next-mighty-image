@@ -15,7 +15,7 @@ A Next.js component for [Mighty Image](https://www.mightyimage.io)
 
 2. Add an environment variable: `MIGHTY_IMAGE_ID=**YOUR_ACCOUNT_ID**`. This ID can be found in the [Mighty Image dashboard ](https://app.mightyimage.io) for your account
 
-3. Add `<MightyImage />` components with `src` and `alt` properties
+3. Add `<MightyImage />` components with `src`, `alt`, `width` and `height` properties
 
 ````
             <div className="relative ">
@@ -76,7 +76,7 @@ Following properties are supported.
 | ----------- | ----------- |
 | sm | viewport width <= 768px | 
 | md |  viewport width <= 1200px |
-| lg | Te viewport width > 1200px |
+| lg | viewport width > 1200px |
 
 ## Examples
 
