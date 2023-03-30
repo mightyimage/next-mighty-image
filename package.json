@@ -1,16 +1,13 @@
 {
   "name": "next-mighty-image",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A next js component for Mighty Image",
   "private": false,
   "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
     "lint": "next lint",
-    "build-mc": "microbundle --jsx React.createElement",          
-    "dev-mc": "microbundle watch"  
+    "build": "microbundle --jsx React.createElement",          
+    "dev": "microbundle watch"  
   },
   "dependencies": {
     "@types/node": "18.15.11",
