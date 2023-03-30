@@ -13,7 +13,7 @@ A Next.js component for [Mighty Image](https://www.mightyimage.io)
 ## How to use
 1. Install the package via npm `npm i next-mighty-image@latest`
 
-2. Add an environment variable: `MIGHTY_IMAGE_ID=**YOUR_ACCOUNT_ID**`. This ID can be found in the Mighty Image dashboard for your account
+2. Add an environment variable: `MIGHTY_IMAGE_ID=**YOUR_ACCOUNT_ID**`. This ID can be found in the [Mighty Image dashboard ](https://app.mightyimage.io) for your account
 
 3. Add `<MightyImage />` components with `src` and `alt` properties
 
